@@ -1,0 +1,794 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>CRHS CS Club 2026-2027</title><meta name="data-notion-page-icon" content="💻"/><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ctext%20y%3D%22.9em%22%20font-size%3D%2290%22%3E%F0%9F%92%BB%3C%2Ftext%3E%3C%2Fsvg%3E"/><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="371bea74-0f17-80a5-b317-cfcae5344ba4" class="page sans" data-notion-page-icon="💻"><header><div class="page-header-icon undefined"><span class="icon" data-emoji="💻"></span></div><h1 class="page-title" dir="auto">CRHS CS Club 2026-2027</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><details class="block-color-yellow_background" data-notion-highlight="yellow_background" dir="auto"><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><h1 id="38dbea74-0f17-80c6-b04d-f879063ef8dd" style="display:inline-block"><mark class="highlight-yellow" data-notion-highlight="yellow">Links</mark></h1></summary><div class="indented"><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="3a5bea74-0f17-80f8-b077-dba2e8751fbd" style="display:inline-block">Club-Owned</h2></summary><div class="indented"><ul id="3a5bea74-0f17-80b9-a66c-f19e904531f9" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://crhscs.club/">CS Club website</a></li></ul><ul id="3a5bea74-0f17-80f7-b6f9-db2a99d7c002" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://www.instagram.com/cinco.cs.club/">cinco.cs.club Instagram</a></li></ul><ul id="3a5bea74-0f17-8058-a82d-e4d75f5605cf" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://www.instagram.com/gwc_crjh/">gwc_crjh Instagram</a></li></ul><details class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="3a5bea74-0f17-8072-bf44-d3a178324205" style="display:inline-block">Docs</h3></summary><div class="indented"><ul id="3a5bea74-0f17-808f-8141-f098c903b382" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://drive.google.com/drive/folders/1VzY0S6wFqdb7K8lexEH3TZXLVtOi5XsT?usp=sharing">Google Drive folder</a></li></ul><ul id="3a5bea74-0f17-8007-bdaa-ec40acda50dc" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://canva.link/d7cg54x9z8gwqg8">Trifold design</a></li></ul><ul id="3a5bea74-0f17-8044-adc9-e4e8972490d9" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://canva.link/jdkwp2is1mtf2hq">Flyer designs</a></li></ul><ul id="3a5bea74-0f17-8017-9e91-dfae933b5f21" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://canva.link/cqzd6frdoj3x2bd">Logo design</a></li></ul><ul id="3b2bea74-0f17-808a-8372-f876ea37c860" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://canva.link/d9uxdwk5gfevkqs">GWC flyer design</a></li></ul></div></details></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="3a5bea74-0f17-8042-878a-e4f1d2d7b49b" style="display:inline-block">External Sites</h2></summary><div class="indented"><ul id="3bdbea74-0f17-80fc-992b-ec622f9bb4c7" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://webmail.migadu.com">Migadu webmail</a></li></ul><ul id="3bdbea74-0f17-8061-9e9c-d9b9c6109462" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://www.remind.com/classes/cinco-cs">Remind</a> @cinco-cs</li></ul><ul id="3bdbea74-0f17-80fb-a369-d2250de6ae6e" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://www.onetapcheckin.com">OneTap</a> (for attendance)</li></ul><ul id="3bdbea74-0f17-808e-a1b1-d7af0e0bc4e8" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://mailchimp.com/">MailChimp</a> (for newsletters)</li></ul><details class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="3a5bea74-0f17-806f-bf99-dc67e0aa71d7" style="display:inline-block">GWC</h3></summary><div class="indented"><ul id="3a5bea74-0f17-8032-8889-c84fe8872c91" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://clubs-hq.girlswhocode.com/login">GWC Clubs HQ</a> (for curriculum)</li></ul><ul id="3a5bea74-0f17-8089-85a8-ebea1ec7739c" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://girlswhocode.zendesk.com/hc/en-us/categories/115000147128-GWC-Clubs">GWC Clubs FAQs</a></li></ul></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="3a5bea74-0f17-8028-b6d7-d19c8af6badb" style="display:inline-block">CSHS</h3></summary><div class="indented"><ul id="3a5bea74-0f17-8052-a338-d5d57c195fe8" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://csteachers.org/cshs/">CSHS home page</a></li></ul><ul id="3a5bea74-0f17-8081-82d3-cdbf6fa1234b" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://csteachers.org/cshs/cshs-faqs/">CSHS FAQs</a></li></ul></div></details></div></details></div></details><details class="block-color-teal_background" data-notion-highlight="teal_background" dir="auto"><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><h1 id="371bea74-0f17-80a7-8111-e049036fb7bb" style="display:inline-block"><mark class="highlight-teal" data-notion-highlight="teal">General</mark></h1></summary><div class="indented"><ul id="371bea74-0f17-8025-99ec-f54a40a5277b" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Start planning events and activities for next year</li></ul><ul id="371bea74-0f17-8008-ab99-fbd9362af588" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Create member application? (to keep more accurate track of total member count)</li></ul><ul id="371bea74-0f17-8039-8c05-f7890c7ebeff" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Update website (subclub meeting dates, points tracker, calendar, how to get CSHS points, more about CSHS and each subclub, additional resources for learning / competitions)</mark></li></ul><ul id="371bea74-0f17-80e8-9f3d-c1e8443b4167" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Announce new club changes in Slack (migrating away from it) and Remind (main messaging platform, all participants can message each other, not just for announcements)</li></ul><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="37dbea74-0f17-803f-93ca-c781003ccbcd" style="display:inline-block">Login Credentials</h2></summary><div class="indented"><details class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="394bea74-0f17-80df-ac06-fb26af4cd42a" style="display:inline-block">CS Instagram</h3></summary><div class="indented"><p id="37dbea74-0f17-8067-a348-e4f053d0d3f1" class="" dir="auto">Email: <a href="mailto:logins@crhsidea.club">logins@crhsidea.club</a> (can still access Instagram account, but probably should change email since we don’t have <a href="http://crhsidea.club">crhsidea.club</a> domain anymore)</p><p id="37dbea74-0f17-80e3-b2d6-f5678cb9df11" class="" dir="auto">Password: #crhscshs28</p><p id="3a2bea74-0f17-8032-a6f1-cdfa1daff939" class="" dir="auto">Username: <a href="https://www.instagram.com/cinco.cs.club/">cinco.cs.club</a></p></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="394bea74-0f17-807a-823e-d3d91ba24c55" style="display:inline-block">GWC Accounts</h3></summary><div class="indented"><details id="394bea74-0f17-806a-9de3-f7a38f648a42" open="" class="toggle" dir="auto"><summary><strong><a href="https://clubs-hq.girlswhocode.com/login">GWC Clubs HQ</a></strong><strong>, </strong><strong><a href="https://www.instagram.com/gwc_crjh/">Instagram</a></strong><strong>, </strong><strong><a href="https://www.onetapcheckin.com">OneTap</a></strong><strong>, Google</strong></summary><div class="indented"><p id="394bea74-0f17-8050-92a5-c366808b996f" class="" dir="auto">Email: <a href="mailto:crjhgwc@gmail.com">crjhgwc@gmail.com</a></p><p id="394bea74-0f17-80bf-96ad-df2e8327873d" class="" dir="auto">Password: CrjhGwc2022</p><p id="3a2bea74-0f17-8044-9106-ec11cb902cbe" class="" dir="auto">Instagram username: <a href="https://www.instagram.com/gwc_crjh/">gwc_crjh</a></p><p id="3a5bea74-0f17-807f-bb95-df09db1fd6f5" class="" dir="auto">GWC HQ club code (changes each year): TX71232</p></div></details><details id="394bea74-0f17-80a6-aa58-f0e7c7cf6789" open="" class="toggle" dir="auto"><summary><strong><a href="https://mailchimp.com/">Mailchimp</a></strong><strong> (needs special character in password)</strong></summary><div class="indented"><p id="394bea74-0f17-80d5-b0df-e4a12ec24561" class="" dir="auto">Email: <a href="mailto:crjhgwc@gmail.com">crjhgwc@gmail.com</a></p><p id="394bea74-0f17-80fb-b34d-e03d7a8031c6" class="" dir="auto">Password: CrjhGwc2022!</p></div></details></div></details></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="37abea74-0f17-8066-b091-c2a7f971128e" style="display:inline-block">Freshman Orientation</h2></summary><div class="indented"><details id="3a5bea74-0f17-80f5-bd93-da3f8aa1e923" open="" class="toggle" dir="auto"><summary><strong>Main info (latest details from Remind)</strong></summary><div class="indented"><ul id="37abea74-0f17-8015-ac9a-c523e440e79a" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Thursday, July 23, 11:15am-2pm</mark></li></ul><ul id="397bea74-0f17-808a-87eb-d6a0442247d6" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Start setting up booth at table in 9th grade gym at 11:15am (not sure what time speeches begin)</li></ul><ul id="397bea74-0f17-80ca-a5db-fb057d2035a5" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Freshmen will go to 9th grade gym to look at club displays from 12pm to 1:30pm</li></ul><ul id="39fbea74-0f17-8048-bd72-fdeb8a253a43" class="bulleted-list" dir="auto"><li style="list-style-type:disc">“May bring a trifold, objects, brochures, etc. to set on your designated table”</li></ul><ul id="39fbea74-0f17-8004-b323-f8e1e7ffaabb" class="bulleted-list" dir="auto"><li style="list-style-type:disc">“Drop-off will be on the left side of the Main 9th Grade Center Doors and pick-up will be on the right side of the Main Campus Gym”</li></ul><p id="3a5bea74-0f17-8059-a69f-ce2bf0e89a91" class="" dir="auto">You can start setting up in the 9th grade gym at 11:15. There will be tables set up around the perimeter of the gym. You can choose any open table!</p><p id="3a5bea74-0f17-8067-bf4c-f20c125d7f7a" class="" dir="auto">Set up is at 11:15. The orientation will start at 12 to 12:15 and you will have three waves of groups that will be coming and going. The last wave will complete at 1:30. You are welcome to clean up and leave after that.</p><p id="3a5bea74-0f17-8098-b902-e2b2c0877f79" class="" dir="auto">Per the principals: No food, drink, or stickers allowed in the gym</p><p id="3a5bea74-0f17-8065-837e-e3a6a8edcfb4" class="" dir="auto">Additional info:<br/>Your club sponsor volunteered you and another member. If you have questions, reach out to me or your club sponsor (please note your sponsors most likely will NOT be present)</p><p id="3a5bea74-0f17-8085-8e20-da2951274b8d" class="" dir="auto">You may bring a trifold, objects, brochures, etc. to set on your designated table. No food or drinks in the gym please!</p><p id="3a5bea74-0f17-800e-b3f4-fa3ce91063f7" class="" dir="auto">Please note that it will be different from last year, if you attended. We will not be having presentations. You will just have a table set up in the gym in a come and go setting.</p></div></details><details id="37abea74-0f17-808f-9c09-fc3ebfbd61d4" open="" class="toggle" dir="auto"><summary><strong>Who is coming</strong></summary><div class="indented"><ul id="37abea74-0f17-8036-80a0-ee7a2b84fa91" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><del>Presenters (on PAC stage, maximum 2 people):</del> Adriana, Nathan<ul id="3a0bea74-0f17-8049-adcc-e5d7de542bb0" class="bulleted-list" dir="auto"><li style="list-style-type:circle">No presentations this year? Apparently changed from last year (we’ll only have table in 9th grade gym)</li></ul><ul id="397bea74-0f17-8007-bb72-ef2fd3ef86a9" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Read email from Ms. Holler with instructions (join orientation Remind)</li></ul><ul id="397bea74-0f17-8087-bf5f-e5a356501ef5" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Wear matching CS shirts (Daydream)</li></ul></li></ul><ul id="37abea74-0f17-801c-9e55-feb0ec34ae66" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Booth (in 9th grade gym, no limit of people; hand out flyers, talk to students, recruit new members): Adriana, Nathan, Anika, and Nidhish<ul id="397bea74-0f17-8077-b84e-c97de8f7774f" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Ideally wear some kind of CS shirt (ex. Campfire, Girls Who Code, CodeWars)</li></ul></li></ul></div></details><details id="37abea74-0f17-807e-b38e-d3a36f46d074" open="" class="toggle" dir="auto"><summary><strong>Booth</strong></summary><div class="indented"><p id="3a5bea74-0f17-803b-9518-d1fcf11622c5" class="" dir="auto">Should at least have some flyers (with some brief overview, Remind QR code and link), trifold, preferably some kind of incentive (stickers)</p><ul id="37dbea74-0f17-800f-93e5-e98020defb35" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Make </mark><mark class="highlight-yellow_background" data-notion-highlight="yellow_background"><a href="https://canva.link/d7cg54x9z8gwqg8">trifold</a></mark><mark class="highlight-yellow_background" data-notion-highlight="yellow_background"> (add QR codes, at least for website)</mark></span><div class="indented"><ul id="397bea74-0f17-804d-8c5e-e8299bce9369" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Will also be used for Open House, 8th-Grade Parents Night, and any other special occasions</li></ul><details id="37fbea74-0f17-80e9-9bd0-ecd381fcc8a8" open="" class="toggle" dir="auto"><summary><strong>Trifold inspiration</strong></summary><div class="indented"><figure id="38dbea74-0f17-80f0-a314-faccfd4b72db" class="image" data-notion-image="img/Screenshot_2026-06-28_at_6.17.14_AM.png" dir="ltr"><a href="img/Screenshot_2026-06-28_at_6.17.14_AM.png"><img style="width:569.984375px" src="img/Screenshot_2026-06-28_at_6.17.14_AM.png"/></a></figure><figure id="38dbea74-0f17-8061-878b-d7472fa57d8d" class="image" data-notion-image="img/image.png" dir="ltr"><a href="img/image.png"><img style="width:133px" src="img/image.png"/></a></figure><figure id="38dbea74-0f17-801d-8d31-d6e1116bf7cf" class="image" data-notion-image="img/image%201.png" dir="ltr"><a href="img/image%201.png"><img style="width:569.984375px" src="img/image%201.png"/></a></figure><figure id="37fbea74-0f17-8042-8d12-f52f9a6353ed" class="image" data-notion-image="img/image%202.png" dir="ltr"><a href="img/image%202.png"><img style="width:570px" src="img/image%202.png"/></a></figure></div></details><details id="37fbea74-0f17-8036-a295-f63f31918c6d" open="" class="toggle" dir="auto"><summary><strong>Color themes</strong></summary><div class="indented"><ul id="37fbea74-0f17-8016-a952-c0b41dc0f47a" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><a href="https://coolors.co/palette/f72585-b5179e-7209b7-560bad-480ca8-3a0ca3-3f37c9-4361ee-4895ef-4cc9f0">Blue, purple, pink</a></li></ul></div></details></div></li></ul><ul id="394bea74-0f17-80e0-85a4-ebdce8ab0881" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked">Design <a href="https://canva.link/jdkwp2is1mtf2hq">flyer</a> (migrate all links from trifold)</span><div class="indented"><ul id="397bea74-0f17-80b4-be94-feea8b27c354" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Will also later distribute to CS teachers to hand out to students, and also hang in classrooms (at least CS classes)</li></ul></div></li></ul><ul id="394bea74-0f17-8023-a27e-d77c0e1a5e44" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><del><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background">Create interest form (add to flyer)</mark></mark></del><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-default_background" data-notion-highlight="default_background"> (maybe later)</mark></mark></span><div class="indented"></div></li></ul><ul id="394bea74-0f17-80a1-9de3-e0b63b83d7a5" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Update website (add all links and info from trifold and flyer)</mark></span><div class="indented"></div></li></ul><ul id="3a5bea74-0f17-80ab-b536-fc90a8a93f97" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked">Update <a href="https://www.instagram.com/cinco.cs.club/">Instagram</a> (remove old post)</span><div class="indented"></div></li></ul><ul id="395bea74-0f17-800f-82cd-c04d237ff0a3" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked">Design logo for club (something simple, just to distinguish the club easily without having to write out the whole name of the club)</span><div class="indented"></div></li></ul><ul id="37dbea74-0f17-80c4-8532-d40dbc6ca68c" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked">Buy incentives (get reimbursed? No food or drinks allowed in gym)</span><div class="indented"><ul id="37fbea74-0f17-8051-9b72-d734577eaa5d" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><del>Jolly Ranchers (Nathan buys)</del></span><div class="indented"></div></li></ul><ul id="37fbea74-0f17-804d-89cb-f759228c9cf2" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><del>Hersheys (Adriana buys)</del></span><div class="indented"></div></li></ul><ul id="37fbea74-0f17-8099-967a-d8e1c8694dbc" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked">Stickers</span><div class="indented"></div></li></ul></div></li></ul><ul id="3a2bea74-0f17-8083-a599-c8945547166b" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked">Ensure all officers are in new Remind</span><div class="indented"></div></li></ul><ul id="397bea74-0f17-80a9-b273-dd297acfa0d9" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked">Adriana: Bring trifold, flyers, <del>stickers </del>(no stickers allowed), table cloth (orange), computer (maybe show website or some cool project / game)</span><div class="indented"></div></li></ul></div></details><details id="37abea74-0f17-80ce-8913-e67f1e4e66c7" open="" class="toggle" dir="auto"><summary><del><strong>Stage speech </strong></del><strong>(no longer doing presentation)</strong></summary><div class="indented"><p id="3a5bea74-0f17-801c-8ff7-f61827a9b8db" class="" dir="auto"><del>Brief talk (1 minute or less) to the incoming freshmen about the CS Club (what it is, what we do, our purpose &amp; activities, etc.)</del></p><ul id="37dbea74-0f17-803f-812a-d5846587c44e" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked"><del>Write speech</del></span><div class="indented"><details id="37fbea74-0f17-80fa-a913-ed5e20a075b6" open="" class="toggle" dir="auto"><summary><del><strong>Speech</strong></del></summary><div class="indented"><p id="37fbea74-0f17-800c-b83e-e1743511a02c" class="" dir="auto">Hi everyone! I’m Adriana, </p><p id="37fbea74-0f17-805f-a46d-dd00d65801aa" class="" dir="auto">and I’m Nathan,</p><p id="37fbea74-0f17-8064-9aa5-f62946ac2b9e" class="" dir="auto">and we’re here to invite y’all to the Comp Sci Club here at Cinco!</p><p id="37fbea74-0f17-8022-9f3a-f4d668d6599d" class="" dir="auto">So what is the Comp Sci Club?</p><p id="37fbea74-0f17-80b3-8823-d4bf49976283" class="" dir="auto">We’re a club focused on all things about computer science. We organize and participate in competitions, teach members, and set up service projects that can get you volunteer hours.</p><p id="37fbea74-0f17-8016-a354-e51c3468b03d" class="" dir="auto">Why should I join?</p><p id="37fbea74-0f17-808b-bc68-c17e6da6e72a" class="" dir="auto">Coding is a super useful skill to have in any career. If you don’t have any prior experience with programming, hardware, or cybersecurity, you should consider joining to learn more about these skills!</p><p id="37fbea74-0f17-80ba-b882-e6a55aeb62b3" class="" dir="auto">But I already know all of those things, what’s in it for me?</p><p id="37fbea74-0f17-8042-a417-d4134bcc63d3" class="" dir="auto">You can put your existing skills to good use. You can represent our school in district-wide UIL competitions and hackathons: 24-hour long challenges where you make an app and submit it to judges.</p><p id="37fbea74-0f17-8077-ba0b-fcce92723e7f" class="" dir="auto">Make sure to check out our booth in the gym for free candy and stickers!</p></div></details></div></li></ul><ul id="37dbea74-0f17-8026-a4c1-cfd82ac14a36" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked"><del>Decide how to split it up</del></span><div class="indented"></div></li></ul><ul id="397bea74-0f17-808c-91ad-eed71007359e" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><del>Practice timing speech (must be 1 minute or less)</del></span><div class="indented"></div></li></ul></div></details></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="371bea74-0f17-80e4-b6a8-ca1e396172be" style="display:inline-block">Meetings</h2></summary><div class="indented"><ul id="371bea74-0f17-807d-836d-dc3dd79b1b12" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">General: </mark><del><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">every week</mark></del><mark class="highlight-yellow_background" data-notion-highlight="yellow_background"> </mark><mark class="highlight-yellow_background" data-notion-highlight="yellow_background"><strong>biweekly</strong></mark><mark class="highlight-yellow_background" data-notion-highlight="yellow_background"> on Tuesdays 2:45-3:15 (alternate with AI &amp; Research Club, forming partnership with them; Tuesdays also coincide with HOSA)</mark><ul id="371bea74-0f17-8016-8a31-c969e9cbb8a8" class="bulleted-list" dir="auto"><li style="list-style-type:circle"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Slideshow of all happenings</mark></li></ul><ul id="371bea74-0f17-8048-ab01-e1ca98305157" class="bulleted-list" dir="auto"><li style="list-style-type:circle"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Earn points by doing sample problems</mark></li></ul></li></ul></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="371bea74-0f17-8037-8ca4-d19e34b7a2ff" style="display:inline-block">Public Relations</h2></summary><div class="indented"><ul id="371bea74-0f17-8057-9216-d710930ab065" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Create flyers and get approval from front office to hang in hallways (meeting days, first meeting date, shortened Remind invite link, big QR code, smaller QR codes? Maybe just in CS classes, easier to maintain)</mark></li></ul><ul id="371bea74-0f17-80f6-81e6-ea2dc911671e" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Create social media posts (ideally before freshman orientation; also update email used on Instagram)</mark><ul id="3a2bea74-0f17-80c8-bf35-fc8d371cb36b" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Post about CS club overview (pinned)</li></ul><ul id="3a2bea74-0f17-8089-8242-d41ac2d69572" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Post about officers (pinned)</li></ul><ul id="3a2bea74-0f17-809b-8795-c3360befa565" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Post about first meeting</li></ul></li></ul><ul id="397bea74-0f17-8048-84ca-fa4cde7037f5" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Create large poster(s) for hallways / rotunda? (Roughly 54in x 36in) Must be approved by front office (At the very least one hand painted poster to hang in the rotunda, ideally also a few printed posters to hang in hallways)</li></ul><ul id="3a7bea74-0f17-8067-b7a3-e1535e9e2f60" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Create HOCO parade poster (roughly 54in x 36in, preferably painted, though printed is better than nothing)</li></ul><ul id="3a7bea74-0f17-80cf-a029-fa5ab27dc6e9" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Create club shirt? Maybe only for CSHS (could increase fees to cover shirt) and other members could buy on their own (would deduct shirt price from fee when they join), ideally find way to make it free for everyone?</li></ul><ul id="371bea74-0f17-8035-8e72-db9ed3538b20" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Create slides (1st general meeting, 1st meeting of each sub club)</mark></li></ul><ul id="37abea74-0f17-80af-9063-fd752ee89adf" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Design </mark><mark class="highlight-yellow_background" data-notion-highlight="yellow_background"><a href="https://canva.link/cqzd6frdoj3x2bd">logo</a></mark><mark class="highlight-yellow_background" data-notion-highlight="yellow_background"> for club (something simple, just to distinguish the club easily without having to write out the whole name of the club)</mark></li></ul><details id="395bea74-0f17-807a-9923-c6dcbc7869f8" open="" class="toggle" dir="auto"><summary><strong>Instagram</strong></summary><div class="indented"><ul id="395bea74-0f17-8086-9df9-c0516584190a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Change email to <a href="http://crhscs.club">crhscs.club</a> domain email (ensure all officers have access)</li></ul><ul id="395bea74-0f17-8046-a691-edbbf399421d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Update profile</li></ul><ul id="395bea74-0f17-80f3-aa8e-f4bc8e33e0ff" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Remove past post?</li></ul></div></details></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="371bea74-0f17-80b1-b07f-d9e3019cb36e" style="display:inline-block">Officers</h2></summary><div class="indented"><ul id="372bea74-0f17-80ee-8a77-e5a690c8af06" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Add all officers as admins to new Remind group</mark></mark></li></ul><ul id="37dbea74-0f17-8023-9680-ea3e2f8222db" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><mark class="highlight-default" data-notion-highlight="default"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Create emails for all officers </mark></mark><mark class="highlight-red" data-notion-highlight="red"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">and for social media</mark></mark><details id="385bea74-0f17-8059-9a55-daa61fbe2f6c" open="" class="toggle" dir="auto"><summary>Might need to change domain?</summary><div class="indented"><figure id="385bea74-0f17-8027-93b4-e1a278f90344" class="image" data-notion-image="img/Screenshot_2026-06-19_at_7.27.08_PM.png" dir="ltr"><a href="img/Screenshot_2026-06-19_at_7.27.08_PM.png"><img style="width:2282px" src="img/Screenshot_2026-06-19_at_7.27.08_PM.png"/></a></figure></div></details></li></ul><ul id="372bea74-0f17-800a-8f64-de266504f6b6" class="bulleted-list" dir="auto"><li style="list-style-type:disc">List of officers:<ul id="371bea74-0f17-80d4-8e81-f88e8362ed9c" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Adriana (12)<ul id="371bea74-0f17-800a-8f4e-d10a9427c740" class="bulleted-list" dir="auto"><li style="list-style-type:square">Co-President</li></ul></li></ul><ul id="371bea74-0f17-80f7-be49-ef22d038bc82" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Nathan (12)<ul id="371bea74-0f17-80aa-b486-f4f884ea10a7" class="bulleted-list" dir="auto"><li style="list-style-type:square">Co-President</li></ul></li></ul><ul id="371bea74-0f17-80a3-9914-c46fb428b20a" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Vatsaal (11)<ul id="371bea74-0f17-8035-9e08-d008dd9b0e3d" class="bulleted-list" dir="auto"><li style="list-style-type:square">Treasurer</li></ul></li></ul><ul id="371bea74-0f17-80a6-a802-c043003bde92" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Anika (11)<ul id="371bea74-0f17-8059-81ff-dc56a8cf27d1" class="bulleted-list" dir="auto"><li style="list-style-type:square">Secretary</li></ul></li></ul><ul id="371bea74-0f17-8070-8ef9-cc57a9fdedf4" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Viha (11)<ul id="371bea74-0f17-80d3-8b9d-e586d128076f" class="bulleted-list" dir="auto"><li style="list-style-type:square">Historian</li></ul></li></ul><ul id="371bea74-0f17-80f0-bf9a-da7e9022f5a7" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Nidhish (10)<ul id="371bea74-0f17-8046-955f-d6c7c4a083ee" class="bulleted-list" dir="auto"><li style="list-style-type:square">Ambassador</li></ul></li></ul></li></ul></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="371bea74-0f17-80e6-9949-cb1c4da37c9b" style="display:inline-block">Funding</h2></summary><div class="indented"><ul id="371bea74-0f17-8065-b9fe-f0cf6839de98" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Hack Club funds? (Research requirements and strings attached) (<a href="https://girlswhocode.zendesk.com/hc/en-us/articles/16333477710235-Are-the-free-GWC-T-Shirts-and-Clubs-Fund-currently-available">GWC is currently not providing funds</a> as of May 31, 2026)</li></ul><ul id="371bea74-0f17-80f2-b0c7-d50e76f1d96d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Find sponsors? (ex. Lockheed Martin) (Research if allowed by KISD)</li></ul></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="3a2bea74-0f17-8020-a15f-dd0b5de28ff9" style="display:inline-block">Engagement Ideas</h2></summary><div class="indented"><details class="" dir="auto"><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><h3 id="3a2bea74-0f17-804b-aa4a-cbe951385245" style="display:inline-block">Food</h3></summary><div class="indented"><ul id="3a2bea74-0f17-8035-91cc-fdcd182d4b66" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Chips</li></ul><ul id="3a2bea74-0f17-80a6-ae68-c35bc5148f48" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Donut holes</li></ul><ul id="3a2bea74-0f17-8081-beef-e7832f5f4c9c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Donuts</li></ul><ul id="3a2bea74-0f17-8018-ae4e-f2447df129e6" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Pizza</li></ul><ul id="3a2bea74-0f17-8067-b21c-dfe474080f9e" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Chick-fil-A catering?</li></ul></div></details></div></details></div></details><details class="block-color-purple_background" data-notion-highlight="purple_background" dir="auto"><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><h1 id="371bea74-0f17-80f0-b5d5-d514d8063b65" style="display:inline-block"><mark class="highlight-purple" data-notion-highlight="purple">Sub-clubs</mark></h1></summary><div class="indented"><ul id="371bea74-0f17-807b-85cf-e87d1cfe8925" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Finalize sub-clubs (structure, activities)</li></ul><ul id="372bea74-0f17-80e3-b613-fc2569f06c75" class="bulleted-list" dir="auto"><li style="list-style-type:disc">List of sub-clubs:<ul id="371bea74-0f17-8068-9285-df6a2e029f6e" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Computer Science Honor Society<ul id="371bea74-0f17-8024-ae97-f88235d18c52" class="bulleted-list" dir="auto"><li style="list-style-type:square">CRJH Outreach</li></ul><ul id="371bea74-0f17-8060-81c2-c95c9e7605fa" class="bulleted-list" dir="auto"><li style="list-style-type:square">BJH Outreach</li></ul><ul id="371bea74-0f17-8043-809b-e4806e6c6f1e" class="bulleted-list" dir="auto"><li style="list-style-type:square">Organizing competitions</li></ul><ul id="371bea74-0f17-8043-ba38-d92158880c96" class="bulleted-list" dir="auto"><li style="list-style-type:square">Tutoring</li></ul></li></ul><ul id="371bea74-0f17-8057-9320-fe441ea936d9" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Competitions<ul id="371bea74-0f17-8027-be41-c98b52074b82" class="bulleted-list" dir="auto"><li style="list-style-type:square">Attending + organizing competitions</li></ul></li></ul><ul id="371bea74-0f17-80ff-bcf2-d83e97424d90" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Girls Who Code<ul id="371bea74-0f17-80d0-a7dc-fc83da61e600" class="bulleted-list" dir="auto"><li style="list-style-type:square">Lesson Provider for HS and JH (possibly as Cinco Ranch chapter at FBPL, though need adult sponsor)</li></ul></li></ul></li></ul><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="371bea74-0f17-80f1-8e8c-fd23bc4d410b" style="display:inline-block">CSHS</h2></summary><div class="indented"><ul id="371bea74-0f17-8008-941c-d8176925052f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Plan out CSHS (how to get points, how to get volunteer hours, requirements, how to get cords, fix / clean up / restructure points tracker)<details id="371bea74-0f17-80ee-b23e-f1c23a0742eb" open="" class="toggle" dir="auto"><summary><strong>Requirements</strong></summary><div class="indented"><ul id="3a8bea74-0f17-8096-8bc9-c422737d0092" class="bulleted-list" dir="auto"><li style="list-style-type:disc">10 volunteer hours</li></ul><ul id="3a8bea74-0f17-807a-be6a-f9bc871c65c6" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Be in 2nd semester 10th grade (at the earliest)</li></ul></div></details></li></ul><ul id="371bea74-0f17-8027-83ad-dd6934c1ae3c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Research reqs for <a href="https://csteachers.org/cshs/">CSHS</a> (ex. honor society projects) and ensure all are met</li></ul><ul id="371bea74-0f17-8038-8269-d897761595c6" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Pay <a href="https://csteachers.org/cshs/cshs-faqs/">fees</a> (collect membership fees at beginning of year)</li></ul><ul id="372bea74-0f17-800d-9f5b-e6f1a3617049" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Reach out to CRJH and BJH teachers for JH Outreach (and possibly GWC?)</li></ul></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="371bea74-0f17-8031-b38d-ca84c2df0ccf" style="display:inline-block">GWC</h2></summary><div class="indented"><ul id="3b2bea74-0f17-807b-bcff-fa8764195f02" class="bulleted-list" dir="auto"><li style="list-style-type:disc">(As of 2026-08-04) Ms. Poncik will sponsor CRJH outreach / GWC on Tuesdays (start date TBD)</li></ul><ul id="371bea74-0f17-80e4-9838-ed591030a89a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">GWC: change name? (Research if allowed by GWC, use <a href="https://girlswhocode.zendesk.com/hc/en-us/categories/115000147128-GWC-Clubs">FAQs</a>, <a href="https://girlswhocode.zendesk.com/hc/en-us/articles/9117719703323-How-do-I-edit-my-program-info">might be allowed</a>, though most likely not, based on policy)</li></ul><ul id="3b2bea74-0f17-809f-bc14-c8cc1b0719ed" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Create GWC chapter at FBPL? (Research if allowed by GWC and FBPL, would need to find adult sponsor, either teacher or possibly librarian)</li></ul></div></details><details class="" dir="auto"><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"><h2 id="371bea74-0f17-8067-89f8-c092aee217a8" style="display:inline-block">Competitions</h2></summary><div class="indented"><ul id="371bea74-0f17-8030-a34f-ed04e432752a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Figure out how to host UIL competition? (Maybe just for KISD?)<ul id="38cbea74-0f17-80e7-8e04-c5b092325d91" class="bulleted-list" dir="auto"><li style="list-style-type:circle">Scan and save Clements problems (MCQ and hands-on) (share with members to help them prepare, can also use as inspiration for writing problems)</li></ul></li></ul><ul id="371bea74-0f17-80e8-b532-e00b296fc66f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Figure out how to organize non-satellite local hackathon without hour requirements</li></ul><ul id="371bea74-0f17-8084-8aad-c989158c6202" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Organize competitions (UIL competitions, virtual hackathons with prizes, in-person hackathons; maybe 2 UIL per semester, virtual hackathon at end of 1st semester, in-person hackathon at end of 2nd semester; have weekly lessons, monthly CTF competitions, weekend challenges that coincide with long weekends and/or breaks)</li></ul><ul id="371bea74-0f17-8060-8255-d3b80ee19e5c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Figure out how to get CS-related absences to count as school-sponsored non-UIL (and UIL) activities (maybe talk to Mr. Porter, Mr. V, Dr. Williams)</li></ul></div></details></div></details><details class="block-color-red_background" data-notion-highlight="red_background" dir="auto"><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><h1 id="371bea74-0f17-8082-b842-c463f0fcc7e2" style="display:inline-block"><mark class="highlight-red" data-notion-highlight="red">Questions</mark></h1></summary><div class="indented"><details id="395bea74-0f17-80b4-9b61-d6ec929c8aa4" open="" class="toggle" dir="auto"><summary><strong>Mr. Porter</strong></summary><div class="indented"><ul id="3a7bea74-0f17-808f-adbb-e8d6c6e7c29c" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Confirm meeting days? (Tuesday 2:45-3:15, 1st meeting on August 25) Maybe have 2 meetings every 2 weeks? (One on Tuesdays, one on Wednesdays)</mark></span><div class="indented"></div></li></ul><ul id="395bea74-0f17-8015-a832-c9280b53e891" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Join Remind?</mark></span><div class="indented"></div></li></ul><ul id="3a7bea74-0f17-8059-9b21-d025c043a381" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked">Affiliate Remind with CRHS?</span><div class="indented"></div></li></ul><ul id="3a7bea74-0f17-8049-aad5-d63deab3b400" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked">Create Canvas course? (there used to be one in 2024-2025, but Mr. P managed it) Would be useful to post resources (or just add resources to website, or create Notion page)</span><div class="indented"></div></li></ul><ul id="3a7bea74-0f17-80df-a8c6-c25f2e928df2" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked">Register for HPE <a href="https://hpecodewars.org">CodeWars</a>? (likely opens around January 20)</span><div class="indented"></div></li></ul><ul id="3a7bea74-0f17-8033-9b5c-d8cf6585dbd4" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked">Register for HPE <a href="https://schoolcerts.ext.hpe.com">certification program</a>? (to give us access to certification courses)</span><div class="indented"></div></li></ul></div></details><details id="397bea74-0f17-806b-9d6e-e416f6ca20a9" open="" class="toggle" dir="auto"><summary><strong>Front office (possibly Mr. Porter or Mr. V)</strong></summary><div class="indented"><ul id="3a7bea74-0f17-8050-863f-cf60008f0ee9" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">How to get announcement on morning announcements? (For meeting reminders)</mark></span><div class="indented"></div></li></ul><ul id="3a7bea74-0f17-80bb-831e-deb7fb4905b9" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">How to add flyer to eNews?</mark></span><div class="indented"></div></li></ul><ul id="3a8bea74-0f17-8010-b049-d9081b72424e" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">How to reserve booth for Open House (Wed Sep 2)?</mark></span><div class="indented"></div></li></ul><ul id="3a7bea74-0f17-808b-a200-d54c231f5318" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">How to reserve spot for HOCO parade (Wed Sep 9) and pep rally (Fri Sep 11)?</mark></span><div class="indented"></div></li></ul><ul id="3a8bea74-0f17-8059-bcfa-eda0645aa39e" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">How to reserve booth for 8th-Grade Parents Night? When is it?</mark></span><div class="indented"></div></li></ul><ul id="3a8bea74-0f17-8040-83c5-cbec08e497b1" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked">How to get CS-related absences to count as school-sponsored non-UIL (and UIL) activities?</span><div class="indented"></div></li></ul></div></details><ul id="3b3bea74-0f17-8035-a7c0-d3da9e5f4ea4" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked"><mark class="highlight-yellow_background" data-notion-highlight="yellow_background">Ms. Mapes: sponsor BJH outreach? (2025-2026 sponsor)</mark></span><div class="indented"></div></li></ul><ul id="3a7bea74-0f17-80ac-83c1-c0e91abf90ca" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked">Mr. V: print large poster(s) for hallway / rotunda using large plotter? (Roughly 54in x 36in)</span><div class="indented"></div></li></ul><ul id="371bea74-0f17-808e-a3e6-c7e39cd2e2f1" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked">Someone from yearbook team: Take CS club yearbook group picture? Maybe even dedicate part of page to CS in clubs section?</span><div class="indented"></div></li></ul><ul id="3a6bea74-0f17-80f7-aec5-ceafc9013b62" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-off" disabled=""/> <span class="to-do-children-unchecked">Nathan: how to access other CS emails? (ex. admin, president)</span><div class="indented"></div></li></ul><ul id="3b3bea74-0f17-8075-9d89-c4c6a2e3b392" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked"><mark class="highlight-default_background" data-notion-highlight="default_background">Max (or a BJH alumnus): ask about who to contact for BJH outreach (maybe ask Alex for Max’s signal)</mark></span><div class="indented"></div></li></ul><ul id="3b2bea74-0f17-8085-8fd8-feaa644154dd" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked"><mark class="highlight-default_background" data-notion-highlight="default_background">Coach Radloff (taught Principles of IT, though also ask other CRJH teachers): sponsor outreach program for CRJH?</mark></span><div class="indented"></div></li></ul><ul id="3a6bea74-0f17-80f7-a0b3-e0e2f7c25e34" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked">Max / Alex: add current officers as <a href="https://github.com/crhscsclub">GitHub org</a> owners?</span><div class="indented"></div></li></ul><ul id="397bea74-0f17-8097-bb84-d40c6ca58aff" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked">Alex: ask about email domains, website domain (how managed? How paying for it?)</span><div class="indented"></div></li></ul><ul id="397bea74-0f17-80dc-a3b9-e4393ccdbf61" class="to-do-list" dir="auto"><li><input type="checkbox" class="checkbox checkbox-on" disabled="" checked=""/> <span class="to-do-children-checked">Anika (or whichever officer was in charge of socials): ask for social media login credentials</span><div class="indented"></div></li></ul></div></details><details class="block-color-blue_background" data-notion-highlight="blue_background" dir="auto"><summary style="font-weight:600;font-size:1.875em;line-height:1.3;margin:0"><h1 id="372bea74-0f17-8066-b019-ebf39fcd0812" style="display:inline-block"><mark class="highlight-blue" data-notion-highlight="blue">Original Plan</mark></h1></summary><div class="indented"><div id="371bea74-0f17-802e-aba2-d9eb36442e93" class="column-list" data-notion-column-list="" dir="auto"><div id="371bea74-0f17-8081-acae-ef3e18e3ff75" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="371bea74-0f17-8045-95ac-ffe107cfd994" class="image" data-notion-image="img/Screenshot_2026-05-31_at_3.56.15_AM.png" dir="ltr"><a href="img/Screenshot_2026-05-31_at_3.56.15_AM.png"><img style="width:321px" src="img/Screenshot_2026-05-31_at_3.56.15_AM.png"/></a></figure></div><div id="371bea74-0f17-80fc-baeb-f2992644e820" style="width:50%" class="column" data-notion-column-ratio="0.5" dir="auto"><figure id="371bea74-0f17-809d-9c7c-d19bdc0d07ed" class="image" data-notion-image="img/Screenshot_2026-05-31_at_3.55.59_AM.png" dir="ltr"><a href="img/Screenshot_2026-05-31_at_3.55.59_AM.png"><img style="width:704px" src="img/Screenshot_2026-05-31_at_3.55.59_AM.png"/></a></figure></div></div></div></details></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
