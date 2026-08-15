@@ -1,2 +1,2 @@
-# officers
-Officers' plan for CRHS CS Club
+# Officers
+Officers' Plan for CRHS CS Club
